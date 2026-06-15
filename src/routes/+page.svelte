@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { _ } from 'svelte-i18n';
+	import { t } from '$lib/i18n';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import { faSpinner, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
 	import { app } from '$lib/stores/app.svelte';
@@ -31,7 +31,7 @@
 					<div class="absolute inset-0 flex items-center justify-center bg-base-200 z-20">
 						<div class="flex flex-col items-center gap-3 text-base-content/60">
 							<FontAwesomeIcon icon={faSpinner} class="text-3xl animate-spin" />
-							<span>{$_('common.loading')}</span>
+							<span>{t('common.loading', app.lang)}</span>
 						</div>
 					</div>
 				{:else if app.error}
@@ -39,7 +39,7 @@
 						<div class="alert alert-error max-w-md">
 							<FontAwesomeIcon icon={faTriangleExclamation} />
 							<div>
-								<div class="font-semibold">{$_('common.error')}</div>
+								<div class="font-semibold">{t('common.error', app.lang)}</div>
 								<div class="text-xs opacity-80">{app.error}</div>
 							</div>
 						</div>

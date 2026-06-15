@@ -36,7 +36,6 @@
 		"@fortawesome/svelte-fontawesome": "^0.2.4",
 		"flatgeobuf": "^3.36.0",
 		"maplibre-gl": "^5.24.0",
-		"svelte-i18n": "^4.0.1",
 		"svelte-maplibre-gl": "^1.0.3"
 	}
 }

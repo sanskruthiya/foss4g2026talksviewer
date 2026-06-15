@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { _ } from 'svelte-i18n';
+	import { t } from '$lib/i18n';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import { faXmark, faStar, faTrash, faDownload, faUpload } from '@fortawesome/free-solid-svg-icons';
 	import { app } from '$lib/stores/app.svelte';
@@ -52,7 +52,7 @@
 		return [...map.entries()].map(([key, sessions]) => ({
 			key,
 			dayLabel:
-				key === '9999-99-99' ? $_('detail.tbd') : fmtDay(sessions[0].datetime),
+				key === '9999-99-99' ? t('detail.tbd', app.lang) : fmtDay(sessions[0].datetime),
 			sessions
 		}));
 	});
@@ -91,12 +91,12 @@
 >
 	<div class="px-4 py-2 border-b border-base-300 flex items-center gap-2">
 		<FontAwesomeIcon icon={faStar} class="text-warning" />
-		<h2 class="font-semibold">{$_('bookmark.title')}</h2>
+		<h2 class="font-semibold">{t('bookmark.title', app.lang)}</h2>
 		<span class="badge badge-sm badge-ghost">{total}</span>
 		<div class="flex items-center gap-1 ml-auto">
 			<button
 				class="btn btn-ghost btn-xs"
-				title={$_('bookmark.export')}
+				title={t('bookmark.export', app.lang)}
 				disabled={total === 0}
 				onclick={() => app.exportBookmarks()}
 			>
@@ -104,7 +104,7 @@
 			</button>
 			<button
 				class="btn btn-ghost btn-xs"
-				title={$_('bookmark.import')}
+				title={t('bookmark.import', app.lang)}
 				onclick={() => fileInput?.click()}
 			>
 				<FontAwesomeIcon icon={faUpload} />
@@ -116,20 +116,20 @@
 				class="hidden"
 				onchange={handleImport}
 			/>
-			<button class="btn btn-ghost btn-xs" onclick={onClose} aria-label={$_('common.close')}>
+			<button class="btn btn-ghost btn-xs" onclick={onClose} aria-label={t('common.close', app.lang)}>
 				<FontAwesomeIcon icon={faXmark} />
 			</button>
 		</div>
 	</div>
 	{#if importStatus}
 		<div class="px-4 py-1.5 text-xs {importStatus === 'ok' ? 'bg-success/15 text-success' : 'bg-error/15 text-error'}">
-			{importStatus === 'ok' ? $_('bookmark.importOk', { values: { count: total } }) : $_('bookmark.importError')}
+			{importStatus === 'ok' ? t('bookmark.importOk', app.lang, { count: total }) : t('bookmark.importError', app.lang)}
 		</div>
 	{/if}
 
 	<div class="overflow-y-auto thin-scroll flex-1 py-1">
 		{#if total === 0}
-			<p class="p-4 text-sm text-base-content/60">{$_('bookmark.empty')}</p>
+			<p class="p-4 text-sm text-base-content/60">{t('bookmark.empty', app.lang)}</p>
 		{:else}
 			{#each grouped as group (group.key)}
 				<!-- Day header -->
@@ -172,7 +172,7 @@
 						<button
 							class="btn btn-ghost btn-xs opacity-0 group-hover:opacity-100 shrink-0"
 							onclick={(e) => { e.stopPropagation(); app.toggleBookmark(s.id); }}
-							aria-label={$_('bookmark.remove')}
+							aria-label={t('bookmark.remove', app.lang)}
 						>
 							<FontAwesomeIcon icon={faTrash} class="text-error" />
 						</button>
@@ -184,6 +184,6 @@
 </aside>
 
 {#if open}
-	<button class="fixed inset-0 bg-black/40 z-40" onclick={onClose} aria-label={$_('common.close')}
+	<button class="fixed inset-0 bg-black/40 z-40" onclick={onClose} aria-label={t('common.close', app.lang)}
 	></button>
 {/if}

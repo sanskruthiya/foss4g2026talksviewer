@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { _ } from 'svelte-i18n';
+	import { t } from '$lib/i18n';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import { faMagnifyingGlass, faXmark } from '@fortawesome/free-solid-svg-icons';
 	import { app } from '$lib/stores/app.svelte';
@@ -12,7 +12,7 @@
 	<input
 		type="search"
 		bind:value={app.search}
-		placeholder={$_('search.placeholder')}
+		placeholder={t('search.placeholder', app.lang)}
 		class="input input-bordered input-sm w-full pl-9 pr-8"
 	/>
 	{#if app.search}

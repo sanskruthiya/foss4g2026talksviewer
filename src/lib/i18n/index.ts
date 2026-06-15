@@ -1,23 +1,17 @@
-import { init, addMessages, locale as i18nLocale } from 'svelte-i18n';
 import type { Lang } from '$lib/types';
 import en from './en.json';
 import ja from './ja.json';
 
-// Load dictionaries synchronously so messages exist before first render
-// (async register() can throw on the initial render).
-addMessages('en', en);
-addMessages('ja', ja);
-
 export const SUPPORTED_LANGS: Lang[] = ['en', 'ja'];
 export const STORAGE_LANG_KEY = 'tv2.lang';
 
-export function setupI18n(initialLocale: Lang = 'en') {
-	init({
-		fallbackLocale: 'en',
-		initialLocale
-	});
-}
+const messages: Record<Lang, Record<string, string>> = {
+	en: en as Record<string, string>,
+	ja: ja as Record<string, string>
+};
 
-export function setLocale(lang: Lang) {
-	i18nLocale.set(lang);
+export function t(key: string, lang: Lang, params?: Record<string, string | number>): string {
+	const raw = messages[lang]?.[key] ?? messages['en']?.[key] ?? key;
+	if (!params) return raw;
+	return raw.replace(/\{(\w+)\}/g, (_, k) => String(params[k] ?? `{${k}}`));
 }

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { _ } from 'svelte-i18n';
+	import { t } from '$lib/i18n';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import { faXmark } from '@fortawesome/free-solid-svg-icons';
 	import { app } from '$lib/stores/app.svelte';
@@ -28,8 +28,8 @@
 		{open ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}"
 >
 	<div class="p-3 border-b border-base-300 flex items-center justify-between">
-		<h2 class="font-semibold">{$_('nav.filters')}</h2>
-		<button class="btn btn-ghost btn-sm lg:hidden" onclick={onClose} aria-label={$_('common.close')}>
+		<h2 class="font-semibold">{t('nav.filters', app.lang)}</h2>
+		<button class="btn btn-ghost btn-sm lg:hidden" onclick={onClose} aria-label={t('common.close', app.lang)}>
 			<FontAwesomeIcon icon={faXmark} />
 		</button>
 	</div>
@@ -37,23 +37,23 @@
 	<div class="p-3 border-b border-base-300 space-y-2">
 		<SearchBar />
 		<div class="flex items-center gap-2 text-xs">
-			<span class="text-base-content/60">{$_('filter.mode')}:</span>
+			<span class="text-base-content/60">{t('filter.mode', app.lang)}:</span>
 			<div class="join">
 				<button
 					class="btn btn-xs join-item {app.tagMode === 'or' ? 'btn-primary' : 'btn-ghost'}"
-					onclick={() => (app.tagMode = 'or')}>{$_('filter.mode.or')}</button
+					onclick={() => (app.tagMode = 'or')}>{t('filter.mode.or', app.lang)}</button
 				>
 				<button
 					class="btn btn-xs join-item {app.tagMode === 'and' ? 'btn-primary' : 'btn-ghost'}"
-					onclick={() => (app.tagMode = 'and')}>{$_('filter.mode.and')}</button
+					onclick={() => (app.tagMode = 'and')}>{t('filter.mode.and', app.lang)}</button
 				>
 			</div>
 		</div>
 		<div class="flex items-center justify-between text-xs">
-			<span class="badge badge-ghost">{$_('filter.matches', { values: { count: app.filtered.length } })}</span>
+			<span class="badge badge-ghost">{t('filter.matches', app.lang, { count: app.filtered.length })}</span>
 			{#if app.hasActiveFilters}
 				<button class="btn btn-xs btn-ghost text-error" onclick={() => app.clearFilters()}>
-					{$_('filter.clearAll')}
+					{t('filter.clearAll', app.lang)}
 				</button>
 			{/if}
 		</div>
@@ -63,7 +63,7 @@
 		<!-- Clusters -->
 		<section>
 			<h3 class="text-xs font-semibold uppercase text-base-content/50 mb-2">
-				{$_('filter.clusters')}
+				{t('filter.clusters', app.lang)}
 			</h3>
 			<div class="flex flex-wrap gap-1.5">
 				{#each app.clusterIds.filter((id) => id >= 0) as id (id)}
@@ -86,7 +86,7 @@
 		{#if app.tracks.length > 0}
 			<section>
 				<h3 class="text-xs font-semibold uppercase text-base-content/50 mb-2">
-					{$_('filter.tracks')}
+					{t('filter.tracks', app.lang)}
 				</h3>
 				<div class="flex flex-wrap gap-1.5">
 					{#each app.tracks as track (track)}
@@ -106,7 +106,7 @@
 		<!-- Tags -->
 		<section>
 			<h3 class="text-xs font-semibold uppercase text-base-content/50 mb-2">
-				{$_('filter.tags')} ({app.tags.length})
+				{t('filter.tags', app.lang)} ({app.tags.length})
 			</h3>
 			<div class="flex flex-wrap gap-1.5">
 				{#each visibleTags as tag (tag.id)}
@@ -134,6 +134,6 @@
 	<button
 		class="fixed inset-0 bg-black/40 z-30 lg:hidden"
 		onclick={onClose}
-		aria-label={$_('common.close')}
+		aria-label={t('common.close', app.lang)}
 	></button>
 {/if}

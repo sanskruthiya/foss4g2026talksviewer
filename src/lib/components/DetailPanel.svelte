@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { _ } from 'svelte-i18n';
+	import { t } from '$lib/i18n';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import {
 		faXmark,
@@ -46,17 +46,17 @@
 			style="border-top:4px solid {clusterColor(s.cluster, app.clusterIds.length)}"
 		>
 			<span class="text-xs font-semibold uppercase text-base-content/50">
-				{$_('detail.cluster')}: {s.clusterLabel || $_('common.other')}
+				{t('detail.cluster', app.lang)}: {s.clusterLabel || t('common.other', app.lang)}
 			</span>
 			<div class="ml-auto flex items-center gap-1">
 				<button
 					class="btn btn-ghost btn-sm {bookmarked ? 'text-warning' : 'text-base-content/25'}"
 					onclick={() => app.toggleBookmark(s.id)}
-					aria-label={bookmarked ? $_('bookmark.remove') : $_('bookmark.add')}
+					aria-label={bookmarked ? t('bookmark.remove', app.lang) : t('bookmark.add', app.lang)}
 				>
 					<FontAwesomeIcon icon={faStar} />
 				</button>
-				<button class="btn btn-ghost btn-sm" onclick={() => app.select(null)} aria-label={$_('common.close')}>
+				<button class="btn btn-ghost btn-sm" onclick={() => app.select(null)} aria-label={t('common.close', app.lang)}>
 					<FontAwesomeIcon icon={faXmark} />
 				</button>
 			</div>
@@ -69,11 +69,11 @@
 			<div class="flex flex-wrap gap-3 text-sm text-base-content/70">
 				<span class="inline-flex items-center gap-1">
 					<FontAwesomeIcon icon={faClock} />
-					{fmtDateTime(s.datetime) || $_('detail.tbd')}
+					{fmtDateTime(s.datetime) || t('detail.tbd', app.lang)}
 				</span>
 				<span class="inline-flex items-center gap-1">
 					<FontAwesomeIcon icon={faLocationDot} />
-					{s.room || $_('detail.tbd')}
+					{s.room || t('detail.tbd', app.lang)}
 				</span>
 			</div>
 
@@ -89,7 +89,7 @@
 			{#if s.url}
 				<a href={s.url} target="_blank" rel="noopener" class="btn btn-primary btn-sm w-full gap-2">
 					<FontAwesomeIcon icon={faUpRightFromSquare} />
-					{$_('detail.openPretalx')}
+					{t('detail.openPretalx', app.lang)}
 				</a>
 			{/if}
 
@@ -97,7 +97,7 @@
 			{#if s.speakers.length > 0}
 				<section>
 					<h3 class="text-xs font-semibold uppercase text-base-content/50 mb-2">
-						{$_('detail.speakers')}
+						{t('detail.speakers', app.lang)}
 					</h3>
 					<div class="space-y-2">
 						{#each s.speakers as sp (sp.name)}
@@ -124,19 +124,19 @@
 			<!-- Abstract -->
 			<section>
 				<h3 class="text-xs font-semibold uppercase text-base-content/50 mb-1">
-					{$_('detail.abstract')}
+					{t('detail.abstract', app.lang)}
 				</h3>
 				{#if s.abstract}
 					<p class="text-sm whitespace-pre-line leading-relaxed">{s.abstract}</p>
 				{:else}
-					<p class="text-sm text-base-content/50 italic">{$_('detail.tbd')}</p>
+					<p class="text-sm text-base-content/50 italic">{t('detail.tbd', app.lang)}</p>
 				{/if}
 			</section>
 
 			<!-- Tags -->
 			{#if s.tagLabels.length > 0}
 				<section>
-					<h3 class="text-xs font-semibold uppercase text-base-content/50 mb-2">{$_('detail.tags')}</h3>
+					<h3 class="text-xs font-semibold uppercase text-base-content/50 mb-2">{t('detail.tags', app.lang)}</h3>
 					<div class="flex flex-wrap gap-1.5">
 						{#each s.tags as tagId, i (tagId)}
 							<button
@@ -156,7 +156,7 @@
 			{#if related(s).length > 0}
 				<section>
 					<h3 class="text-xs font-semibold uppercase text-base-content/50 mb-2">
-						{$_('detail.related')}
+						{t('detail.related', app.lang)}
 					</h3>
 					<div class="space-y-1">
 						{#each related(s) as r (r.id)}

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { _ } from 'svelte-i18n';
+	import { t } from '$lib/i18n';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import { faLocationCrosshairs, faStar as faStarSolid } from '@fortawesome/free-solid-svg-icons';
 	import { app } from '$lib/stores/app.svelte';
@@ -21,12 +21,12 @@
 <div class="bg-base-100 border-t border-base-300 flex flex-col h-full">
 	<div class="px-3 py-2 border-b border-base-300 flex items-center gap-2 text-sm font-semibold">
 		<FontAwesomeIcon icon={faLocationCrosshairs} class="text-primary" />
-		{$_('nearby.title')}
+		{t('nearby.title', app.lang)}
 		<span class="badge badge-sm badge-ghost ml-auto">{app.nearby.length}</span>
 	</div>
 
 	{#if app.nearby.length === 0}
-		<div class="p-4 text-sm text-base-content/60">{$_('nearby.hint')}</div>
+		<div class="p-4 text-sm text-base-content/60">{t('nearby.hint', app.lang)}</div>
 	{:else}
 		<div class="overflow-y-auto thin-scroll flex-1">
 			<table class="table table-sm table-pin-rows">

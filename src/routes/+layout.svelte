@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import { onMount } from 'svelte';
-	import { setupI18n, setLocale, SUPPORTED_LANGS, STORAGE_LANG_KEY } from '$lib/i18n';
+	import { SUPPORTED_LANGS, STORAGE_LANG_KEY } from '$lib/i18n';
 	import { app } from '$lib/stores/app.svelte';
 	import type { Lang } from '$lib/types';
 
@@ -16,12 +16,8 @@
 		return 'en';
 	}
 
-	const initialLang = detectLang();
-	setupI18n(initialLang);
-
 	onMount(() => {
-		setLocale(initialLang);
-		app.init(initialLang);
+		app.init(detectLang());
 	});
 </script>
 
