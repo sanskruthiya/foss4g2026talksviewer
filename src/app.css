@@ -1,0 +1,46 @@
+@import 'tailwindcss';
+@plugin 'daisyui' {
+	themes: light --default;
+}
+
+:root {
+	/* FOSS4G 2026 brand green (from schedule conference colors) */
+	--brand: #4db05b;
+}
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+}
+
+body {
+	font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	overscroll-behavior: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* MapLibre tweaks */
+.maplibregl-popup-content {
+	border-radius: 0.5rem;
+	padding: 0;
+	box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.2);
+}
+
+/* Thin scrollbars for side panels */
+.thin-scroll::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+.thin-scroll::-webkit-scrollbar-thumb {
+	background: rgb(0 0 0 / 0.2);
+	border-radius: 4px;
+}
