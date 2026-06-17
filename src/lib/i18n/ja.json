@@ -38,5 +38,19 @@
 	"common.other": "その他",
 	"common.close": "閉じる",
 	"common.loading": "セッションを読み込み中...",
-	"common.error": "データの読み込みに失敗しました"
+	"common.error": "データの読み込みに失敗しました",
+	"about.title": "このサイトについて",
+	"about.description": "FOSS4G Hiroshima 2026のセッションを概念マップ上に可視化する非公式Webアプリケーションです。自然言語処理技術を使用してセッションを内容の類似度に基づいて配置し、MapLibre GL JSにてマッピングしています。セッション内容は英語ですが、機械翻訳による多言語に表示を変更することができます。気になるトークを発見したりスケジュールを計画したりすることが簡単にできます。",
+	"about.features.title": "機能",
+	"about.features.map": "**概念マップ**: トピックの類似度に基づいてセッションを配置",
+	"about.features.search": "**検索・フィルタ**: キーワード、タグ、トラック、クラスタでセッションを検索",
+	"about.features.bookmark": "**マイスケジュール**: セッションをブックマークし、スケジュールをエクスポート/インポート",
+	"about.features.nearby": "**付近表示**: マップ中央付近のセッションを探索",
+	"about.github": "ソースコード",
+	"about.github.description": "",
+	"about.github.link": "GitHub",
+	"about.logo.title": "ロゴの出典",
+	"about.logo.description": "FOSS4G 2026 Hiroshimaのロゴは、公式カンファレンス実行委員会によってCC-BY-4.0ライセンスで公開されています。",
+	"about.logo.link": "ロゴリポジトリ",
+	"nav.about": "このサイトについて"
 }

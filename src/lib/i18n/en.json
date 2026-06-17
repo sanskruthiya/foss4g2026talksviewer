@@ -38,5 +38,19 @@
 	"common.other": "Other",
 	"common.close": "Close",
 	"common.loading": "Loading sessions...",
-	"common.error": "Failed to load data"
+	"common.error": "Failed to load data",
+	"about.title": "About this site",
+	"about.description": "This is an unofficial web application that visualizes FOSS4G Hiroshima 2026 conference sessions on a concept map. Sessions are positioned based on their content similarity using natural language processing technology and mapped with MapLibre GL JS. Session content is in English, but you can switch the display to multiple languages via machine translation. Easily discover interesting talks and plan your schedule.",
+	"about.features.title": "Features",
+	"about.features.map": "**Concept Map**: Sessions are positioned by topic similarity",
+	"about.features.search": "**Search & Filter**: Find sessions by keywords, tags, tracks, or clusters",
+	"about.features.bookmark": "**My Schedule**: Bookmark sessions and export/import your schedule",
+	"about.features.nearby": "**Nearby View**: Explore sessions near the map center",
+	"about.github": "Source Code",
+	"about.github.description": "",
+	"about.github.link": "GitHub",
+	"about.logo.title": "Logo Attribution",
+	"about.logo.description": "The FOSS4G 2026 Hiroshima logo is licensed under CC-BY-4.0 by the official conference organizing committee.",
+	"about.logo.link": "Logo repository",
+	"nav.about": "About"
 }

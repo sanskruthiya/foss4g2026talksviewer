@@ -10,15 +10,18 @@
 	import NearbyTable from '$lib/components/NearbyTable.svelte';
 	import DetailPanel from '$lib/components/DetailPanel.svelte';
 	import BookmarkDrawer from '$lib/components/BookmarkDrawer.svelte';
+	import AboutModal from '$lib/components/AboutModal.svelte';
 
 	let filtersOpen = $state(false);
 	let bookmarksOpen = $state(false);
+	let aboutOpen = $state(false);
 </script>
 
 <div class="h-screen flex flex-col overflow-hidden bg-base-200">
 	<Header
 		onToggleFilters={() => (filtersOpen = !filtersOpen)}
 		onToggleBookmarks={() => (bookmarksOpen = !bookmarksOpen)}
+		onToggleAbout={() => (aboutOpen = !aboutOpen)}
 	/>
 
 	<div class="flex-1 flex overflow-hidden relative">
@@ -60,4 +63,5 @@
 	</div>
 
 	<BookmarkDrawer open={bookmarksOpen} onClose={() => (bookmarksOpen = false)} />
+	<AboutModal open={aboutOpen} onClose={() => (aboutOpen = false)} />
 </div>

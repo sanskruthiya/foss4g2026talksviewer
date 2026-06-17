@@ -85,7 +85,7 @@
 </script>
 
 <aside
-	class="bg-base-100 border-l border-base-300 w-80 max-w-[85vw] h-full flex flex-col
+	class="bg-base-100 border-l border-base-300 w-96 max-w-[85vw] h-full flex flex-col
 		fixed inset-y-0 right-0 z-50 shadow-xl transition-transform duration-300
 		{open ? 'translate-x-0' : 'translate-x-full'}"
 >
