@@ -15,7 +15,8 @@
 
 	const langLabels: Record<Lang, string> = {
 		en: 'English',
-		ja: '日本語'
+		ja: '日本語',
+		ko: '한국어'
 	};
 
 	async function switchLanguage(lang: Lang) {
