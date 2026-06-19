@@ -1,4 +1,4 @@
-export type Lang = 'en' | 'ja' | 'ko';
+export type Lang = 'en' | 'ja' | 'ko' | 'pt';
 
 export interface Speaker {
 	name: string;
