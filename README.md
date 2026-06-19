@@ -6,7 +6,7 @@ An interactive web application that visualizes FOSS4G Hiroshima 2026 conference 
 
 This application uses NLP embeddings to position conference sessions based on their content similarity, creating an intuitive visual map with MapLibre where related topics are clustered together. Navigate the map to explore sessions, filter by tags or tracks, and build your personalized schedule.
 
-**Live Demo**: [https://foss4g2026talksviewer.party071985.workers.dev/](https://foss4g2026talksviewer.party071985.workers.dev/)
+**Live Demo**: [https://foss4g2026talkexplorer.party071985.workers.dev/](https://foss4g2026talkexplorer.party071985.workers.dev/)
 
 ## Features
 
@@ -42,47 +42,17 @@ This application uses NLP embeddings to position conference sessions based on th
 - **Icons**: [Font Awesome](https://fontawesome.com/)
 - **Deployment**: [Cloudflare Pages](https://pages.cloudflare.com/)
 
-## Development
-
-### Prerequisites
-
-- Node.js 18+ and npm
-
-### Setup
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-```
-
-### Deployment
-
-This project is configured for deployment to Cloudflare Pages:
-
-```bash
-npm run deploy
-```
-
 ## Data Source
 
-Session data is sourced from the FOSS4G 2026 Hiroshima conference program via Pretalx API. The semantic embeddings are generated using AI models to analyze session content.
+Session data is sourced from the FOSS4G Hiroshima 2026 conference program via Pretalx API. The semantic embeddings are generated using AI models to analyze session content.
 
 ## Logo Attribution
 
-The FOSS4G 2026 Hiroshima logo is licensed under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) by the official conference organizing committee. The logo files are available at: https://github.com/foss4g-2026/foss4g-2026.github.io/tree/main/logo
+The FOSS4G Hiroshima 2026 logo is licensed under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) by the official conference organizing committee. The logo files are available at: https://github.com/foss4g-2026/foss4g-2026.github.io/tree/main/logo
 
 ## License
 
-This is an unofficial, personal project created to enhance the conference experience. Please refer to the official [FOSS4G 2026 Hiroshima website](https://2026.foss4g.org/) for authoritative conference information.
+This is an unofficial, personal project created to enhance the conference experience. Please refer to the official [FOSS4G Hiroshima 2026 website](https://2026.foss4g.org/) for authoritative conference information.
 
 ## Contributing
 
@@ -90,5 +60,5 @@ Contributions are welcome! Please feel free to submit issues or pull requests.
 
 ## Acknowledgments
 
-- FOSS4G 2026 Hiroshima organizing committee for the conference data and logo
+- FOSS4G Hiroshima 2026 organizing committee for the conference data and logo
 - The open-source community for the excellent tools and libraries used in this project
