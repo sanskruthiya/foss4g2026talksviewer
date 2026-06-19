@@ -1,4 +1,4 @@
-# FOSS4G 2026 Talks Viewer
+# FOSS4G 2026 Talk Explorer
 
 An interactive web application that visualizes FOSS4G Hiroshima 2026 conference sessions on a semantic map. This unofficial tool helps attendees discover related talks and plan their conference schedule.
 
