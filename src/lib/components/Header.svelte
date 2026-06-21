@@ -17,7 +17,8 @@
 		en: 'English',
 		ja: '日本語',
 		ko: '한국어',
-		pt: 'Português'
+		pt: 'Português',
+		th: 'ไทย'
 	};
 
 	async function switchLanguage(lang: Lang) {
@@ -74,6 +75,7 @@
 			</button>
 			<ul
 				class="menu dropdown-content bg-base-100 rounded-box z-50 mt-3 w-36 p-2 shadow-lg border border-base-300"
+				style="max-height: 20rem; overflow-y: auto;"
 			>
 				{#each SUPPORTED_LANGS as lang (lang)}
 					<li>
@@ -102,6 +104,7 @@
 			</button>
 			<ul
 				class="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow-lg border border-base-300"
+				style="max-height: 28rem; overflow-y: auto;"
 			>
 				<li>
 					<button class="justify-start gap-2" onclick={onToggleAbout}>

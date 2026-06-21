@@ -23,7 +23,7 @@
 	// Minimal style: flat background only (no real-world basemap).
 	const style: StyleSpecification = {
 		version: 8,
-		glyphs: 'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf',
+		glyphs: 'https://fonts.openmaptiles.org/{fontstack}/{range}.pbf',
 		sources: {},
 		layers: [{ id: 'bg', type: 'background', paint: { 'background-color': '#f1f5f9' } }]
 	};
@@ -118,6 +118,7 @@
 
 	const symbolLayout = {
 		'text-field': ['get', 'label'],
+		'text-font': ['Noto Sans Regular'],
 		'text-size': 12,
 		'text-anchor': 'center',
 		'text-max-width': 8,
