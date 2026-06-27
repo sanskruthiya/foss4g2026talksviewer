@@ -10,7 +10,10 @@
 		ja: '日本語',
 		ko: '한국어',
 		pt: 'Português',
-		th: 'ไทย'
+		th: 'ไทย',
+		es: 'Español',
+		fr: 'Français',
+		de: 'Deutsch'
 	};
 
 	const shortLabels: Record<Lang, string> = {
@@ -18,7 +21,10 @@
 		ja: 'JA',
 		ko: 'KO',
 		pt: 'PT',
-		th: 'TH'
+		th: 'TH',
+		es: 'ES',
+		fr: 'FR',
+		de: 'DE'
 	};
 
 	async function choose(lang: Lang) {

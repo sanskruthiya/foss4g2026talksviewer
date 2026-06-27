@@ -18,7 +18,10 @@
 		ja: '日本語',
 		ko: '한국어',
 		pt: 'Português',
-		th: 'ไทย'
+		th: 'ไทย',
+		es: 'Español',
+		fr: 'Français',
+		de: 'Deutsch'
 	};
 
 	async function switchLanguage(lang: Lang) {
